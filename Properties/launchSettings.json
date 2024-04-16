@@ -9,7 +9,7 @@
   },
   "profiles": {
     "http": {
-      "commandName": "Project",
+      "commandName": "Project", 
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5246",

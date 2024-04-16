@@ -29,10 +29,12 @@ public partial class SchoolManagementDbContext : DbContext
 
             entity.HasOne(d => d.Course).WithMany(p => p.Classes)
                 .HasForeignKey(d => d.CourseId)
+                .OnDelete(DeleteBehavior.Cascade) // Add this line
                 .HasConstraintName("FK__Classes__CourseI__3E52440B");
 
             entity.HasOne(d => d.Lecturer).WithMany(p => p.Classes)
                 .HasForeignKey(d => d.LecturerId)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__Classes__Lecture__3D5E1FD2");
         });
 
@@ -77,6 +79,9 @@ public partial class SchoolManagementDbContext : DbContext
             entity.Property(e => e.FirstName).HasMaxLength(50);
             entity.Property(e => e.LastName).HasMaxLength(50);
         });
+
+        
+
 
         OnModelCreatingPartial(modelBuilder);
     }

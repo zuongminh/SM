@@ -25,6 +25,8 @@ builder.Services.AddNotyf(c => {
     c.Position = NotyfPosition.TopRight;
 });
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
